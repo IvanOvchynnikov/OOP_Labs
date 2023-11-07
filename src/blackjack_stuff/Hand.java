@@ -2,14 +2,35 @@ package blackjack_stuff;
 
 import java.util.ArrayList;
 
+/**
+ * Клас Hand використовується для зберігання карт та виконання певних методів.
+ */
+
 public class Hand {
+    /**
+     * Приватний масив hand зберігає карти даного користувача.
+     */
     private ArrayList<Card> hand;
+
+    /**
+     * Hand() - конструктор класа
+     */
     public Hand(){
         this.hand=new ArrayList<Card>();
     }
+
+    /**
+     * Метод add_card додає карту до масиву даного користувача.
+     * @param card - екземпляр класу @link Card
+     */
     public void add_card(Card card){
         this.hand.add(card);
     }
+
+    /**
+     * Виводить в консоль карти певного користувача.
+     * @param type (1) щоб вивести карту дилера або (2) щоб вивести всі карти користувача.
+     */
     public void print_card(int type){
         if(type==1){
             System.out.print(this.hand.get(0).get_value());
@@ -22,9 +43,18 @@ public class Hand {
             }
         }
     }
+
+    /**
+     * Очищає приватний масив hand.
+     */
     public void clear_hand(){
         this.hand.clear();
     }
+
+    /**
+     * Повертає суму значень карт даного користувача.
+     * @return Сума значень по картах.
+     */
     public int get_value(){
         int cur=0,aces=0;
         for(Card card:this.hand){

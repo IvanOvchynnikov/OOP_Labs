@@ -2,8 +2,19 @@ package blackjack_stuff;
 
 import java.util.Random;
 import java.util.ArrayList;
+
+/**
+ * Даний клас служить для створення колоди з 52 карт
+ */
 public class Deck {
+    /**
+     * Поле cards служить для зберігання колоди з 52 карт
+     */
     private ArrayList<Card> cards = new ArrayList<Card>();
+
+    /**
+     * Створює колоду з 52 карт
+     */
     public void createDeck(){
         for(Suit suit:Suit.values()){
             for(Value value:Value.values()){
@@ -11,6 +22,9 @@ public class Deck {
             }
         }
     }
+    /**
+     * Перемішує карти за допомогою бібліотеки random.
+     */
     public void shuffleCard(){
         ArrayList<Card>tmp=new ArrayList<Card>();
         Random random=new Random();
@@ -22,6 +36,10 @@ public class Deck {
         this.cards=tmp;
     }
 
+    /**
+     * Метод , для видачі карти.
+     * @return - екземпляр класу @link Card - Рандомна карта з кололди.
+     */
     public Card deal_card(){
         Random random=new Random();
         int ind=random.nextInt(this.cards.size());

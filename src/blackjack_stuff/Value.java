@@ -1,5 +1,8 @@
 package blackjack_stuff;
 
+/**
+ * Енумератор Value використовується для ініціалізації можливих цифрових значень карт.
+ */
 public enum Value {
     TWO,
     THREE,
